@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for glassmorphic design */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-black via-gray-900 to-red-900;
+    @apply text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphic card with white/black/red theme */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl;
+    @apply border border-white/20;
+    @apply shadow-2xl shadow-black/50;
+    @apply rounded-3xl;
+  }
+
+  .glass-card-sub {
+    @apply bg-black/40 backdrop-blur-lg;
+    @apply border border-white/10;
+    @apply shadow-xl shadow-black/30;
+    @apply rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-red-600 to-pink-600;
+    @apply text-white font-semibold;
+    @apply px-8 py-4 rounded-2xl;
+    @apply shadow-lg shadow-red-500/30;
+    @apply hover:shadow-xl hover:shadow-red-500/40;
+    @apply hover:from-red-700 hover:to-pink-700;
+    @apply transform hover:scale-105;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-4 focus:ring-red-500/20;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur-sm text-white font-semibold;
+    @apply px-6 py-3 rounded-xl;
+    @apply border-2 border-white/20;
+    @apply shadow-md hover:shadow-lg;
+    @apply hover:bg-white/20 hover:border-white/30;
+    @apply transform hover:scale-105;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:ring-4 focus:ring-white/20;
+  }
+
+  .card {
+    @apply glass-card;
+    @apply p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl;
+    @apply border-2 border-white/20;
+    @apply bg-white/5 backdrop-blur-sm;
+    @apply text-white placeholder-white/50;
+    @apply focus:border-red-500 focus:ring-4 focus:ring-red-500/20;
+    @apply transition-all duration-200;
+    @apply outline-none;
+  }
+
+  .sidebar-item {
+    @apply flex items-center px-4 py-3 rounded-xl;
+    @apply text-white hover:text-red-400;
+    @apply hover:bg-white/10;
+    @apply transition-all duration-200;
+    @apply cursor-pointer;
+  }
+
+  .sidebar-item.active {
+    @apply bg-red-500/30 text-red-300;
+    @apply shadow-lg shadow-red-500/20;
+  }
+
+  .progress-bar {
+    @apply w-full bg-white/10 rounded-full h-2;
+  }
+
+  .progress-fill {
+    @apply bg-gradient-to-r from-red-500 to-pink-500;
+    @apply h-2 rounded-full;
+    @apply transition-all duration-500;
+  }
+}
